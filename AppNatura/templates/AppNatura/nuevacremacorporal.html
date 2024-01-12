@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nueva crema corporal</title>
+</head>
+<body>
+    <h1>Agregamos cremas corporales</h1>
+    <form action="/nuevacremacorporal/" method="POST"> {% csrf_token %}
+        
+
+        <p> Nombre: <input type="text" name="nombre"> </p>
+        <p> Contenido neto: <input type="number" name="contenido neto"> </p>
+        <p> Vto: <input type="number" name="vto"> </p>
+        <p> Precio: <input type="number" name="precio"> </p>
+
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+</html>
