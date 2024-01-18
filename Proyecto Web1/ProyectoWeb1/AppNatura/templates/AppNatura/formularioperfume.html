@@ -1,0 +1,15 @@
+{% extends "AppNatura/padre.html" %}
+
+
+{% block titulo %}
+    <h1>Agregamos Perfumes</h1>
+
+    <form action="" method="POST"> {% csrf_token %}
+        
+        {{formulario.as_p}}
+        
+
+        <input type="submit" value="Guardar">
+    </form>
+
+{% endblock%}

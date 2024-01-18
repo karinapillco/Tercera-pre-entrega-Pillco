@@ -1,0 +1,20 @@
+{% extends "AppNatura/padre.html" %}
+
+
+{% block titulo %}
+
+
+    <h1>Agregamos cremas corporales</h1>
+    <form action="/nuevacremacorporal/" method="POST"> {% csrf_token %}
+        
+
+        <p> Nombre: <input type="text" name="nombre"> </p>
+        <p> Contenido neto: <input type="number" name="contenido neto"> </p>
+        <p> Vto: <input type="number" name="vto"> </p>
+        <p> Precio: <input type="number" name="precio"> </p>
+
+        <input type="submit" value="Guardar">
+    </form>
+    
+    
+{% endblock%}

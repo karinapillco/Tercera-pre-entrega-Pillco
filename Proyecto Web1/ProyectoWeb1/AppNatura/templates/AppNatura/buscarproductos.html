@@ -1,0 +1,20 @@
+{% extends "AppNatura/padre.html" %}
+
+
+{% block titulo %}
+
+    <h1>buscamos productos por nombre</h1>
+
+    <form action="/resultadosproductos/" method="GET">
+       
+        ingresa el nombre del producto: <input type="text" name="nombre">
+        <input type="submit" value="buscar">
+    </form>
+
+    {% for x in perfumes %}
+
+    <p>{{x.nombre}}</p>
+    
+    {% endfor %}
+
+{% endblock%}
