@@ -4,7 +4,25 @@
 {% load static %}
 
 
-{% block titulo %}  Perfumes Disponibles  {% endblock %}
+{% block titulo %}  
+Perfumes Disponibles  
+{% endblock %}
+
+{% block contenido1 %}
+<ol>
+{% for x in perfumes %}
+
+<li>Nombre: {{x.nombre}}     Precio: {{x.precio}}</li>
+
+
+{% endfor %}
+</ol>
+
+<br>
+<br>
+
+<a class="btn btn-primary" href="{% url 'Nuevo Perfume' %}">Agregar Nuevo Perfume</a> 
+{% endblock %}
 
 
 

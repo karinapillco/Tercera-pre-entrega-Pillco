@@ -1,0 +1,29 @@
+{% extends "AppNatura/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}  
+Perfumes Disponibles  
+{% endblock %}
+
+{% block contenido1 %}
+<ol>
+{% for x in object_list %}
+
+<li>Nombre: {{x.nombre}}     Precio: {{x.precio}}</li>
+
+
+{% endfor %}
+</ol>
+
+<br>
+<br>
+
+
+{% endblock %}
+
+
+
+{{formulario.as_p}}

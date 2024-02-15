@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from AppNatura.views import *
+from django.contrib.auth.views import LogoutView
 
 
 urlpatterns = [
@@ -29,12 +30,28 @@ urlpatterns = [
     path("cremacorporal/", ver_cremacorporal, name="Crema Corporal"),
 
     # URLS para cear datos
-    path("nuevoPerfume/", agregar_perfume),
-    path("nuevaCremaCorporal/", agregar_cremacorporal),
+    path("nuevoPerfume/", agregar_perfume, name= "Nuevo Perfume"),
+    path("nuevaCremaCorporal/", agregar_cremacorporal, name="Nueva Crema"),
 
     # URLS buscar productos
     path("buscarproductos/", buscar_productos),
     path("resultadosproductos/", resultado_buscar_productos),
+
+    # URLS actualizar
+    path("actualizarperfume/<perfume_nombre>", actualizar_perfume, name="Actualizar Perfume"),
     
+    # URLS buscar productos
+    path("eliminarperfume/<perfume_nombre>", eliminar_perfume, name="Eliminar Perfume"),
+
+    # URLS crud
+    path("listacremacorporal/", ListaCremaCorporal.as_view(), name="Lista Crema Corporal"),
+    path("crearcremacorporal/", CrearCremaCorporal.as_view(), name="Crear Crema Corporal"),
+    path("actualizarcremacorporal/", ActualizarCremaCorporal.as_view(), name="Actualizar Crema Corporal"),
+    path("borrarcremacorporal/", BorrarCremaCorporal.as_view(), name= "Borrar Crema Corporal"),
+
+    #REGISTRO
+    path("login/", inicio_sesion, name="Iniciar Sesion"),
+    path("registro/", registro, name="Registrarse"),
+    path("logout/", cerrar_sesion, name="Cerrar Sesion"),
 ]
 

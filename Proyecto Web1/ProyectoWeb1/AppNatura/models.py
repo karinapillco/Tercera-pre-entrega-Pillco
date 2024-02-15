@@ -10,6 +10,8 @@ class Productos(models.Model):
         app_label = 'AppNatura'
 
 class Perfume(models.Model):
+    def __str__(self):
+        return f"{self.nombre}"
 
     nombre = models.CharField(max_length=50)
     contenido_neto = models.IntegerField()

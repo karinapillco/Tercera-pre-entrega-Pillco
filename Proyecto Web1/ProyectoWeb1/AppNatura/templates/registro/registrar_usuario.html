@@ -1,0 +1,18 @@
+{% extends "AppNatura/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}  
+Registrarse 
+{% endblock %}
+
+{% block contenido1 %}
+<form action="" method="POST"> {% csrf_token %}
+    {{formu}}
+    <br>
+    <input type="submit" value="Registrarse">
+</form>
+
+{% endblock %}

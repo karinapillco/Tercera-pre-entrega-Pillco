@@ -1,0 +1,17 @@
+{% extends "AppNatura/padre.html" %}
+
+
+{% block titulo %}  Crema Corporales Disponibles  {% endblock %}
+
+
+{% block contenido1 %}
+ 
+<form action="" method="POST"> {% csrf_token %}
+
+    <p>¿Estas seguro de eliminar este producto: {{object}}?</p>
+    <input type="submit" value="Borrar">
+</form>
+
+{% endblock %}
+
+

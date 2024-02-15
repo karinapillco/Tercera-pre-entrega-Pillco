@@ -25,7 +25,12 @@
                 <a class="navbar-brand" href="{% url 'Productos' %}">Productos</a>
                 <a class="navbar-brand" href="{% url 'Perfumes' %}">Perfumes</a>
                 <a class="navbar-brand" href="{% url 'Crema Corporal' %}">Crema Corporal</a>
-                <a class="btn btn-primary" href="#signup">Sign Up</a>
+                {% if user.ir_authenticated %}
+                <a class="btn btn-primary" href="{% url 'Cerrar Sesion' %}">Cerrar Sesion</a>
+                {% else %}
+                <a class="btn btn-primary" href="{% url 'Registrarse' %}">Registrarse</a>
+                <a class="btn btn-primary" href="{% url 'Iniciar Sesion' %}">Iniciar Sesion</a>
+                {% endif %}
             </div>
         </nav>
         <!-- Masthead-->
@@ -38,6 +43,7 @@
                             <h1 class="mb-5">
                                 {% block titulo %}  {% endblock %}
                             </h1>
+                            {% block contenido1 %} {% endblock %}
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
